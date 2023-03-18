@@ -1,0 +1,26 @@
+django-admin startproject mi_proyecto
+cd mi_proyecto
+python manage.py startapp mi_app
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("¡Hola A Coruña!")
+    
+    from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'mi_app',  # Agrega aquí el nombre de tu aplicación
+]
+
+python manage.py runserver
+
